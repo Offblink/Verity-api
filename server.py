@@ -23,6 +23,8 @@ def create_app(chat_url: str, api_key: str, model: str) -> Flask:
     app = Flask(__name__)
 
     @app.route("/v1/chat/completions", methods=["POST"])
+
+    @app.route("/chat/completions", methods=["POST"])
     def chat_completions():
         """Proxy chat completion requests to the upstream API."""
         import requests as req

@@ -344,13 +344,7 @@ class VerityApp(QMainWindow):
             self._log("错误: 请填写 API 地址")
             return
 
-        # Build the full chat URL
         url = url.rstrip("/")
-        if not url.endswith("/v1/chat/completions"):
-            if "/v1" not in url:
-                url += "/v1/chat/completions"
-            elif not url.endswith("/chat/completions"):
-                url += "/chat/completions"
 
         host = self.host_edit.text().strip() or "127.0.0.1"
         try:
@@ -378,7 +372,7 @@ class VerityApp(QMainWindow):
             }
         """)
         self._set_inputs_enabled(False)
-        self._log(f"服务启动: http://{host}:{port}/v1/chat/completions")
+        self._log(f"服务启动: http://{host}:{port}/chat/completions")
 
     def _stop_server(self):
         if self._server and self._server.isRunning():
@@ -418,7 +412,7 @@ class VerityApp(QMainWindow):
         name = self.provider_combo.currentText()
         provider = find_provider(name)
         if provider:
-            self.url_edit.setText(provider.base_url)
+            self.url_edit.setText(provider.chat_url)
             self.model_edit.setText(provider.default_model)
             self.url_edit.setReadOnly(True)
             self.url_edit.setStyleSheet("QLineEdit { color: #64748b; background: #f1f5f9; }")
