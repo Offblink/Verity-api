@@ -15,12 +15,9 @@ Verity 是一个 Minecraft 恐怖模组，核心特色是 AI 驱动的神秘实�
 ## 安装
 
 ```bash
-# 克隆仓库
 git clone https://github.com/wszzxzzxnb/Verity-api.git
 cd Verity-api
-
-# 安装依赖（或直接运行 main.py 自动安装）
-pip install -r requirements.txt
+python main.py   # 首次运行自动检测并安装缺失依赖
 ```
 
 ## 使用
@@ -34,7 +31,7 @@ python main.py
 3. 确认模型名称
 4. 点击 **启动服务**
 5. 在 Verity 模组的 LiteLLM URL 中填入：`http://127.0.0.1:5000/v1/chat/completions`
-6. 关闭窗口 → 最小化到系统托盘，服务继续运行
+6. 关闭窗口 - 最小化到系统托盘，服务继续运行
 
 在系统托盘右键可选择「打开主界面」或「退出」。
 
@@ -42,12 +39,12 @@ python main.py
 
 | Provider | 默认模型 | API 地址 |
 |---|---|---|
-| OpenAI | gpt-4o-mini | api.openai.com |
-| DeepSeek | deepseek-chat | api.deepseek.com |
 | 智谱 (Zhipu) | glm-4-flash | open.bigmodel.cn |
+| DeepSeek | deepseek-v4-flash | api.deepseek.com |
 | 通义千问 (Tongyi) | qwen-turbo | dashscope.aliyuncs.com |
 | Moonshot (Kimi) | moonshot-v1-8k | api.moonshot.cn |
 | SiliconFlow | Qwen/Qwen2.5-7B-Instruct | api.siliconflow.cn |
+| OpenAI | gpt-4o-mini | api.openai.com |
 | 自定义 | 任意 | 手动输入 |
 
 ## 技术栈
