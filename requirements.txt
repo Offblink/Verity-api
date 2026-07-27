@@ -1,0 +1,4 @@
+flask>=3.0,<4
+requests>=2.31,<3
+PyQt6>=6.5,<7
+waitress>=3.0,<4
